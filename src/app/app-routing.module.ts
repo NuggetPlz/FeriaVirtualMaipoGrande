@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login';
 import { LoginMenuComponent } from './loginMenu';
+import { PedidosMenuComponent } from './pedidosMenu';
 import { RegistroMenuComponent } from './registroMenu';
 import { ProductosMenuComponent } from './productosMenu';
 import { FrutasMenuComponent } from './frutasMenu';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'frutasMenu', component: FrutasMenuComponent },
   { path: 'ventaManzanas', component: VentaManzanasComponent },
   { path: 'registroMenu', component: RegistroMenuComponent },
+  { path: 'pedidosMenu', component: PedidosMenuComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];

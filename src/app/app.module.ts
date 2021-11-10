@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login';
 import { LoginMenuComponent } from './loginMenu';
+import { PedidosMenuComponent } from './pedidosMenu';
 import { RegistroMenuComponent } from './registroMenu';
 import { ProductosMenuComponent } from './productosMenu';
 import { FrutasMenuComponent } from './frutasMenu';
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductosMenuComponent,
     FrutasMenuComponent,
     VentaManzanasComponent,
-    RegistroMenuComponent
+    RegistroMenuComponent,
+    PedidosMenuComponent,
   ],
   imports: [
     BrowserModule,
