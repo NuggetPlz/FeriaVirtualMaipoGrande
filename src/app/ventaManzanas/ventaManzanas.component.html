@@ -1,3 +1,4 @@
+<!-- 
 <h2></h2>
 
 <h1>Procesos de venta para participar</h1>
@@ -6,7 +7,7 @@
     <div *ngFor="let user of servicio.manzanas| keyvalue">
         <div class="gallery">
             <a>
-            <img src="assets/images/Manzanas.png" alt="Proveedores" width="100" height="100">
+            <img src="assets/images/apple2.png" alt="Proveedores" width="100" height="100">
         </a>
         <p> Cantidad Necesitadas   <b> {{user.value['CANTIDAD']}} </b></p>
         <p> Fecha Limite para participar de la venta  <b> {{user.value['FECHA_LIMITE']}} </b></p>
@@ -14,4 +15,29 @@
        </div>
     </div>
 </div>    
-    
+-->
+<!--  CONTENIDO -->
+<section class="page-section portfolio" id="servicios">
+    <div class="container">
+        <div class="row justify-content-center" *ngFor="let user of servicio.manzanas| keyvalue">
+            <!--Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto">
+                    <img class="img-fluid" src="/assets/images/Compra.png" alt="..." />
+                </div>
+            </div>
+            <!--Item 2-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                
+                <h3>{{user.value['CANTIDAD']}}</h3>
+                <h5>Nombre de quien vende</h5>
+                <p>Descripcion</p>
+                <ul>
+                    <li>Fecha de cultivo</li>
+                    <li>Fecha de recoleccion</li>
+                    <li>{{user.value['FECHA_LIMITE']}}</li>
+                </ul>
+                <a href="carrito.html">Agregar productos</a>
+              </div>
+            </div>
+

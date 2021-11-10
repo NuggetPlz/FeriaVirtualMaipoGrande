@@ -36,7 +36,8 @@ a {
 }
 
 :host ::ng-deep .gallery {
-  border: 1px solid #ccc;
+  border: 5px solid #ccc;
+  align-items: center;
 }
 
 :host ::ng-deep .gallery:hover {
@@ -146,9 +147,9 @@ a {
 }
 
 :host ::ng-deep .responsiveProductos {
-  padding: 0 80px;
+  padding: 0 20px;
   align-self: center;
-  width: 24.99999%;
+  width: 25%;
 }
 
 body {
