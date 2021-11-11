@@ -1,5 +1,62 @@
-<h1 class="Registro de Usuarios Compradores">Ingrese sus datos</h1>
+<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Ingrese sus datos</h2>
+      <!-- estrella-->
+      <div class="divider-custom">
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
+      </div>
 
+<form id="reg-form">
+  <input type="text" autocomplete="off" id="username" placeholder="Usuario">
+  <p></p>
+  <input type="password" autocomplete="off" id="password" placeholder="Contraseña">
+  <p></p>
+  <input type="text" autocomplete="off" id="name" placeholder="Nombre">
+  <p></p>
+  <input type="text" autocomplete="off" id="lastname" placeholder="Apellido">
+  <p></p>
+  <input type="text" autocomplete="off" id="mail" placeholder="Email">
+  <p></p>
+  <input type="text" autocomplete="off" id="company" placeholder="Empresa">
+  <p></p>
+  <input type="text" autocomplete="off" id="address" placeholder="Direccion">
+  <p></p>
+  <p></p>
+  <input type="submit" value="Registrar" routerLink="/login">
+  </form>
+  
+  <script>
+    const form = document.getElementById('reg-form')
+    form.addEventListener('submit',registerUser)
+  
+    async function registerUser(event){
+      const username = document.getElementById('username')
+      const password = document.getElementById('password')
+      const name = document.getElementById('name')
+      const lastname = document.getElementById('lastname')
+      const mail = document.getElementById('mail')
+      const company = document.getElementById('company')
+      const address = document.getElementById('address')
+
+  
+      const result = await fetch('/api/register', {
+        method: 'POST',
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username,
+          password
+        })
+      }).then((res) => res.json())
+  
+      console.log(result)
+  
+    }
+  </script>
+
+
+<!--
 <div class="containerRegistro">
  <div class="row">
   <div class="col-25">
@@ -138,5 +195,5 @@
   <a routerLink="/inicio"><input type="submit" value="Registrarse"></a>
 </div>
 </div>
-
+-->
 

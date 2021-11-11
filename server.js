@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var bodyparser = require('body-parser');
 var oracledb = require('oracledb');
+var bcrypt = require('bcrypt');
+var User = require('./model/user')
 
 app.use(express.json()); 
 
@@ -48,47 +50,36 @@ connection.query(sql, [name , apellido, psw], function (err, data) {
 
 */
 
-app.post('/addUser', function (req, res) {
-
-    var name="Ricardo";
-    var apellido="Estrella";
-    var psw="123123";
-    var defaulttbs="UsuariosFeria";
-    var requete="";
-   
-      oracledb.getConnection(connAttrs, function (err, connection) {
+app.post('/registro', function (req, res) {
+    "use strict";
+    oracledb.getConnection(conexionOracle, function (err, connection) {
         if (err) {
             // Error connecting to DB
             res.set('Content-Type', 'application/json');
             res.status(500).send(JSON.stringify({
                 status: 500,
-                message: "Error connecting to DB",
+                message: "Error al conectar con la base de datos",
                 detailed_message: err.message
             }));
             return;
         }
-		if(psw==psw)
-			if(defaulttbs!="")
-				requete="INSERT INTO "+defaulttbs+" VALUES ("+name+","+apellido+","+psw+")";
-			else
-		     	requete="INSERTO INTO "+defaulttbs+" VALUES ("+name+","+apellido+","+psw+")";	
-        connection.execute(requete, {}, {
-            outFormat: oracledb.OBJECT // Return the result as Object
+
+        var sql = "INSERT INTO usuario (id_usuario, nom_us, contrasenia, id_usuario_persona, fk_usuario_rol) VALUES ( ?, " ({username}) + " , " ({password}) + " , " ({tipeuser}) + " , " ({tiperol}) + ");"
+
+        connection.execute(sql, {
+
         }, function (err, result) {
             if (err) {
-                res.header('Access-Control-Allow-Origin','*'); 
-                res.header('Access-Control-Allow-Headers','Content-Type');
-                res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
-                res.contentType('application/json').status(200);
-                res.send(JSON.stringify(err.message+" "+defaulttbs)) ;
-               
+                res.set('Content-Type', 'application/json');
+                res.status(500).send(JSON.stringify({
+                    status: 500,
+                    message: "Error al traer la tabla UsuariosFeria",
+                    detailed_message: err.message
+                }));
             } else {
-                res.header('Access-Control-Allow-Origin','*');
-                res.header('Access-Control-Allow-Headers','Content-Type');
-                res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+                res.header('Access-Control-Allow-Methods','POST');
                 res.contentType('application/json').status(200);
-                res.send(JSON.stringify("1"))   ; 
-                
+                res.send(JSON.stringify(result.rows));	
             }
             // Release the connection
             connection.release(
@@ -96,17 +87,13 @@ app.post('/addUser', function (req, res) {
                     if (err) {
                         console.error(err.message);
                     } else {
-                        console.log("POST /sendTablespace : Connection released");
+                        console.log("Connection released");
                     }
                 });
         });
     });
-   
 });
 
-
-
-/////Consulta de productos tipo manzana////// done
 app.get('/productosManzanas', function (req, res) {
     "use strict";
     oracledb.getConnection(conexionOracle, function (err, connection) {
@@ -120,14 +107,14 @@ app.get('/productosManzanas', function (req, res) {
             }));
             return;
         }
-        connection.execute("SELECT * FROM PRODUCTOSMANZANAS", {}, {
+        connection.execute("SELECT * FROM PRODUCTO WHERE FK_PRDUCTO_TIPOPROD = 1", {}, {
             outFormat: oracledb.OBJECT // Return the result as Object
         }, function (err, result) {
             if (err) {
                 res.set('Content-Type', 'application/json');
                 res.status(500).send(JSON.stringify({
                     status: 500,
-                    message: "Error al traer la tabla UsuariosFeria",
+                    message: "Error al traer la tabla Productos",
                     detailed_message: err.message
                 }));
             } else {
@@ -149,6 +136,8 @@ app.get('/productosManzanas', function (req, res) {
         });
     });
 });
+
+
 
 
 app.listen(3000,'localhost',function(){
