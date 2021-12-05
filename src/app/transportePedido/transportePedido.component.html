@@ -1,0 +1,23 @@
+<section class="page-section portfolio" id="servicios">
+    <div class="container">
+        <div class="row justify-content-center" *ngFor="let user of servicio.manzanas| keyvalue">
+            <!--Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto">
+                    <img class="img-fluid" src="/assets/images/Compra.png" alt="..." />
+                </div>
+            </div>
+            <!--Item 2-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                
+                <h3>{{user.value['CANTIDAD']}}</h3>
+                <h5>Manzanas</h5>
+                <p>Descripcion</p>
+                <ul>
+                    <li>Fecha de cultivo</li>
+                    <li>{{user.value['FECHA_LIMITE']}}</li>
+                </ul>
+                <a href="carrito.html">Agregar productos</a>
+              </div>
+            </div>
+

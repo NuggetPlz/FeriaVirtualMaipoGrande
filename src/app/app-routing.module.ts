@@ -7,6 +7,8 @@ import { LoginMenuComponent } from './loginMenu';
 import { PedidosMenuComponent } from './pedidosMenu';
 import { RegistroMenuComponent } from './registroMenu';
 import { ProductosMenuComponent } from './productosMenu';
+import { TransporteMenuComponent } from './transporteMenu';
+import { TransportePedidoComponent } from './transportePedido';
 import { FrutasMenuComponent } from './frutasMenu';
 import { VentaManzanasComponent } from './ventaManzanas';
 import { InicioComponent } from './inicio';
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'productosMenu', component: ProductosMenuComponent },
+  { path: 'transporteMenu', component: TransporteMenuComponent },
+  { path: 'transportePedido', component: TransportePedidoComponent },
   { path: 'frutasMenu', component: FrutasMenuComponent },
   { path: 'ventaManzanas', component: VentaManzanasComponent },
   { path: 'registroMenu', component: RegistroMenuComponent },

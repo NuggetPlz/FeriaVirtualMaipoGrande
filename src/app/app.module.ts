@@ -7,7 +7,10 @@ import { LoginComponent } from './login';
 import { LoginMenuComponent } from './loginMenu';
 import { PedidosMenuComponent } from './pedidosMenu';
 import { RegistroMenuComponent } from './registroMenu';
+import { LoginTransporteComponent } from './loginTransporte'; 
 import { ProductosMenuComponent } from './productosMenu';
+import { TransporteMenuComponent } from './transporteMenu';
+import { TransportePedidoComponent } from './transportePedido';
 import { FrutasMenuComponent } from './frutasMenu';
 import { VentaManzanasComponent } from './ventaManzanas';
 import { InicioComponent } from './inicio';
@@ -27,9 +30,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     LoginComponent,
     InicioComponent,
+    LoginTransporteComponent,
     RegistroComponent,
     LoginMenuComponent,
     ProductosMenuComponent,
+    TransporteMenuComponent,
+    TransportePedidoComponent,
     FrutasMenuComponent,
     VentaManzanasComponent,
     RegistroMenuComponent,
