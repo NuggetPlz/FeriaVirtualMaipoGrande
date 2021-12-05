@@ -1,4 +1,4 @@
-
+/*
 var oracledb = require('oracledb');
 
 var UserSchema = oracledb.Schema({
@@ -11,3 +11,4 @@ var UserSchema = oracledb.Schema({
 var model = oracledb.model('UserSchema', UserSchema)
 
 module.exports = model
+*/
