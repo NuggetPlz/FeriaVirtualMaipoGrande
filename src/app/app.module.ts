@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login';
 import { LoginMenuComponent } from './loginMenu';
 import { PedidosMenuComponent } from './pedidosMenu';
+import { PedidoVerduraComponent } from './pedidoVerdura';
+import { PedidoFrutaComponent } from './pedidoFruta';
 import { RegistroMenuComponent } from './registroMenu';
 import { LoginTransporteComponent } from './loginTransporte'; 
 import { ProductosMenuComponent } from './productosMenu';
@@ -40,6 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     VentaManzanasComponent,
     RegistroMenuComponent,
     PedidosMenuComponent,
+    PedidoVerduraComponent,
+    PedidoFrutaComponent,
   ],
   imports: [
     BrowserModule,

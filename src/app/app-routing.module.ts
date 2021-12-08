@@ -5,6 +5,8 @@ import { LoginCompradorComponent } from './loginComprador';
 import { LoginTransporteComponent } from './loginTransporte';
 import { LoginMenuComponent } from './loginMenu';
 import { PedidosMenuComponent } from './pedidosMenu';
+import { PedidoVerduraComponent } from './pedidoVerdura';
+import { PedidoFrutaComponent } from './pedidoFruta';
 import { RegistroMenuComponent } from './registroMenu';
 import { ProductosMenuComponent } from './productosMenu';
 import { TransporteMenuComponent } from './transporteMenu';
@@ -29,6 +31,8 @@ const routes: Routes = [
   { path: 'ventaManzanas', component: VentaManzanasComponent },
   { path: 'registroMenu', component: RegistroMenuComponent },
   { path: 'pedidosMenu', component: PedidosMenuComponent },
+  { path: 'pedidoVerdura', component: PedidoVerduraComponent },
+  { path: 'pedidoFruta', component: PedidoFrutaComponent},
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
 ];
