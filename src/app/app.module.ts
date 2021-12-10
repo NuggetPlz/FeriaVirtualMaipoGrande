@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login';
 import { LoginMenuComponent } from './loginMenu';
+import { LoginCompradorComponent } from './loginComprador'; 
 import { PedidosMenuComponent } from './pedidosMenu';
 import { PedidoVerduraComponent } from './pedidoVerdura';
+import { PedidoMaizComponent } from './pedidoMaiz';
+import { PedidoPaltaComponent } from './pedidoPalta';
 import { PedidoFrutaComponent } from './pedidoFruta';
 import { RegistroMenuComponent } from './registroMenu';
 import { LoginTransporteComponent } from './loginTransporte'; 
@@ -31,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
+    LoginCompradorComponent,
     InicioComponent,
     LoginTransporteComponent,
     RegistroComponent,
@@ -43,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegistroMenuComponent,
     PedidosMenuComponent,
     PedidoVerduraComponent,
+    PedidoMaizComponent,
+    PedidoPaltaComponent,
     PedidoFrutaComponent,
   ],
   imports: [

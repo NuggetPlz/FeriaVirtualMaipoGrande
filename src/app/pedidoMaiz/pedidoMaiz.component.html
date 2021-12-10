@@ -1,0 +1,33 @@
+<section class="page-section portfolio" id="servicios">
+    <div class="container">
+         <!-- titulo -->
+ <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Detalles del Pedido</h2>
+ <!-- estrella-->
+ <div class="divider-custom">
+     <div class="divider-custom-line"></div>
+     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+     <div class="divider-custom-line"></div>
+ </div>
+        <!--   CONTENIDO -->
+        <form class="form-register" action="#" onsubmit="return validar();">
+
+          <h2>Producto: Maiz</h2>
+          <p></p>
+          
+            <input type="date" id="fecha" name="fecha" min="1950-01-01" max="2022-01-01" class="input-100" required> 
+            <p></p>
+
+            <input type="text" id="cantidad" name="cantidad"  placeholder="Cantidad/Kg" autocomplete="off" class="input-40" required>  
+            <p></p>
+             
+            <input type="text"  id="calidad" name="calidad" autocomplete="off" placeholder="Calidad" class="input-90" required> 
+            <p></p>
+            
+          
+          
+             </form>
+
+             <form action="/pay" method="post">
+               <input type="submit" value="Realizar Pedido">
+             </form>
+    </div>

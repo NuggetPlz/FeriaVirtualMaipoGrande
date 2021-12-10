@@ -6,20 +6,20 @@
           <div class="divider-custom-line"></div>
       </div>
 
-<form id="reg-form">
-  <input type="text" autocomplete="off" id="username" placeholder="Usuario">
+<form id="reg-form" onsubmit="return validar();">
+  <input type="text" autocomplete="off" id="username" placeholder="Usuario" required>
   <p></p>
-  <input type="password" autocomplete="off" id="password" placeholder="Contraseña">
+  <input type="password" autocomplete="off" id="password" placeholder="Contraseña" required>
   <p></p>
-  <input type="text" autocomplete="off" id="name" placeholder="Nombre">
+  <input type="text" autocomplete="off" id="name" placeholder="Nombre" required>
   <p></p>
-  <input type="text" autocomplete="off" id="lastname" placeholder="Apellido">
+  <input type="text" autocomplete="off" id="lastname" placeholder="Apellido" required>
   <p></p>
-  <input type="text" autocomplete="off" id="mail" placeholder="Email">
+  <input type="email" autocomplete="off" id="mail" placeholder="correo@dominio.com" required> 
   <p></p>
-  <input type="text" autocomplete="off" id="company" placeholder="Empresa">
+  <input type="text" autocomplete="off" id="company" placeholder="Empresa" required>
   <p></p>
-  <input type="text" autocomplete="off" id="address" placeholder="Direccion">
+  <input type="text" autocomplete="off" id="address" placeholder="Direccion" required>
   <p></p>
   <p></p>
   <input type="submit" value="Registrar" routerLink="/login">
